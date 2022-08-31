@@ -1,0 +1,49 @@
+<body>
+<h1>Input &amp; Output with HTML and JS.</h1><br>
+<p>
+  <label>Input:</label>
+  <input id="input" type="text" placeholder="Input Value"
+  oninput="collectval(this.value)"
+  onchange="collectval(this.value)">
+</p>
+<p>Output: <span id="output"></span></p>
+<br><br><h4>Type in a primary color with a semi colin to change the color of the output text.  You may also type "rainbow" for an alternating rainbow color.<br>The input box contains an HTML code compiler.  You may use inline CSS in a text tag to change the output text to a custom color.</h4>
+<h5>Script Explanation:</h5>
+<p>Using HTML, we create an input box and an output section.  Using Javascrpt events, we collect the user input.  That input is then assigned to a variable (valinput).  Next, we use "let x = document.getElementById("id");" to get the output section.  The value of the variable (valinput) is assigned to that ID.  That will create the output text.  Then, using if and else if statements, we can see when a user types in one of the avalible colors.  <a href="./rainbow-script">Click here</a> for the rainbow script.
+<script>
+function collectval(valinput){
+valinput = (valinput);
+let x = document.getElementById("output");
+x.innerHTML = valinput;
+if (x.innerHTML === "red;"){
+x.style.color = "red";
+}
+else if (x.innerHTML === "blue;"){
+x.style.color = "blue";
+}
+else if (x.innerHTML === "yellow;"){
+x.style.color = "yellow";
+}
+else if (x.innerHTML === "rainbow;"){
+  const scheme = document.getElementById("output");
+  const rainbow = [
+    "#9400D3",
+    "#4B0082",
+    "#0000FF",
+    "#00FF00",
+    "#FFFF00",
+    "#FF7F00",
+    "#FF0000",
+  ];
+  var currentColor = 0;
+  setInterval(() => {
+    scheme.style.color = `${rainbow[currentColor]}`;
+    scheme.style.borderColor = `${rainbow[currentColor]}`;
+    currentColor++; 
+    if (currentColor == rainbow.length-1) {
+    currentColor = 0;
+    }
+  }, 1000);
+}
+}
+</script>
