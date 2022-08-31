@@ -1,0 +1,33 @@
+<DOCTYPE html>
+  <html>
+    <head>
+      <title>Rainbow Script</title>
+    </head>
+    <body style="background:black; color:white;">
+    <h2>Rainbow Script</h2>
+    <p>
+    const scheme = document.getElementById("output");<br>
+    const rainbow = [<br>
+    "#9400D3",<br>
+    "#4B0082",<br>
+    "#0000FF",<br>
+    "#00FF00",<br>
+    "#FFFF00",<br>
+    "#FF7F00",<br>
+    "#FF0000",<br>
+  ];<br>
+  var currentColor = 0;<br>
+  setInterval(() => {<br>
+    scheme.style.color = `${rainbow[currentColor]}`;<br>
+    scheme.style.borderColor = `${rainbow[currentColor]}`;<br>
+    currentColor++; <br>
+    if (currentColor == rainbow.length-1) {<br>
+    currentColor = 0;<br>
+    }<br>
+  }, 1000);<br>
+}<br>
+}<br>
+</p>
+<p style="position:absolute; bottom:0; font-size: 0.01em;"><small>Script from Stack Overflow.  Customized to script.</small></p>
+    </body>
+  </html>
